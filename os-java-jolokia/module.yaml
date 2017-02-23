@@ -4,4 +4,4 @@ language:
 artifacts:
   - name: jolokia
     chksum: md5:240381af7039461f3472b7796fe9cd4b
-    artifact: http://${CE_HOST}/get?digest=240381af7039461f3472b7796fe9cd4b
+    artifact: jolokia-jvm-1.3.5.redhat-1-agent.jar
