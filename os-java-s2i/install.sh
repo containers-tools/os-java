@@ -3,11 +3,10 @@
 set -e
 
 function install() {
-  SCRIPT_DIR=$(dirname $(readlink -n $0))
-  ADDED_DIR=${SCRIPT_DIR}/added
+  ADDED_DIR=${CCT_MODULE_PATH}/added
 
-  chgrp -R root $SCRIPT_DIR
-  chmod -R g+rwX $SCRIPT_DIR
+  chgrp -R root ${CCT_MODULE_PATH}
+  chmod -R g+rwX ${CCT_MODULE_PATH}
 
   cp -r ${ADDED_DIR}/s2i /usr/local
   chmod ug+x /usr/local/s2i/*

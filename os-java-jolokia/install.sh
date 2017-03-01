@@ -6,7 +6,7 @@ set -e
 function install() {
 # Jolokia agent
   mkdir -p /opt/jolokia/etc
-  cp ${CCT_MODULES}/added/jolokia-opts /opt/jolokia/jolokia-opts
+  cp ${CCT_MODULE_PATH}/added/jolokia-opts /opt/jolokia/jolokia-opts
   cp ${CCT_ARTIFACT_PATH_JOLOKIA} /opt/jolokia/jolokia.jar
 
   chmod 444 /opt/jolokia/jolokia.jar
