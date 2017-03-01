@@ -137,7 +137,8 @@ get_java_options() {
     debug_opts=$($dir/debug-options)
   fi
   if [ -f "$dir/proxy-options" ]; then
-    proxy_opts=$($dir/proxy-options)
+    source "$dir/proxy-options"
+    proxy_opts="$(proxy_options)"
   fi
   # Normalize spaces with awk (i.e. trim and elimate double spaces)
   echo "${JAVA_OPTIONS} $(run_java_options) ${debug_opts} ${proxy_opts} ${java_opts}" | awk '$1=$1'

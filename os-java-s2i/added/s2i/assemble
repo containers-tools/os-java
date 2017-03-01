@@ -107,8 +107,9 @@ function build_maven() {
   # Default args: no tests, if a module is specified, only build this module
   local maven_args=${MAVEN_ARGS:--e -Popenshift -DskipTests -Dcom.redhat.xpaas.repo.redhatga -Dfabric8.skip=true package}
 
+  # Use batch mode (CLOUD-579)
   echo "Found pom.xml ... "
-  local mvn_cmd="${maven_env_args} ${maven_args} -Djava.net.preferIPv4Stack=true ${MAVEN_ARGS_APPEND}"
+  local mvn_cmd="${maven_env_args} ${maven_args} --batch-mode -Djava.net.preferIPv4Stack=true ${MAVEN_ARGS_APPEND}"
   echo "Running 'mvn ${mvn_cmd}'"
 
   local old_dir=$(pwd)
